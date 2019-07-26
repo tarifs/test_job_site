@@ -28,6 +28,14 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    function jobs() {
+        return $this->hasMany('App\Job');
+    }
+
+    function role() {
+        return $this->belongsTo('App\Role');
+    }
+
     /**
      * The attributes that should be cast to native types.
      *
