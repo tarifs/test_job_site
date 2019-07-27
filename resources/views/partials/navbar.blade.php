@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-light navbar-laravel">
     <a class="navbar-brand" href="{{ url('/') }}">
-       <img src="{{ asset('backend/Jobs.png') }}" id="mylogo">
+       <img src="{{ asset('public/backend/Jobs.png') }}" id="mylogo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -11,7 +11,7 @@
         <!-- Left Side Of Navbar -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/userdashboard">FIND JOBS<span class="sr-only">(current)</span></a>
+                <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="{{ url('/userdashboard') }}">FIND JOBS<span class="sr-only">(current)</span></a>
             </li>
           </ul>
         @else
@@ -19,13 +19,13 @@
             <!-- Left Side Of Navbar -->
               <ul class="navbar-nav mr-auto">
                  <li class="nav-item">
-                    <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/userdashboard">FIND JOBS<span class="sr-only">(current)</span></a>
+                    <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="{{ url('/userdashboard') }}">FIND JOBS<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/profile/{{str_slug(strtolower(Auth::user()->name), '-')}}">PROFILE</a>
+                    <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="{{ url('/profile') }}/{{ str_slug(strtolower(Auth::user()->name), '-')}}">PROFILE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/my-jobs">MY JOBS</a>
+                    <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="{{ url('/my-jobs') }}">MY JOBS</a>
                 </li>
               </ul>                      
          @endif  
@@ -33,23 +33,23 @@
          @if(Auth::user()->role == 2)
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/jobs">JOBS<span class="sr-only">(current)</span></a>
+                    <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="{{ url('/jobs') }}">JOBS<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/dashboard">DASHBOARD</a>
+                    <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="{{ url('/dashboard') }}">DASHBOARD</a>
                 </li>
              </ul>                      
          @endif     
          @if(Auth::user()->role == 3)    
              <ul class="navbar-nav mr-auto">
                  <li class="nav-item">
-                    <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/panel/applicant">APPLICANT<span class="sr-only">(current)</span></a>
+                    <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="{{ url('/panel/applicant') }}">APPLICANT<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/panel/company">COMPANY</a>
+                    <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="{{ url('/panel/company') }}">COMPANY</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="/panel/jobs">JOBS</a>
+                    <a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="{{ url('/panel/jobs') }}">JOBS</a>
                 </li>
               </ul>                     
           @endif  
@@ -60,7 +60,7 @@
             @guest
                 <li><a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="{{ route('login') }}">LOGIN</a></li>
                 <li><a class="nav-link list-group-item list-group-item-action flex-column align-items-end" href="{{ route('register') }}">SIGN UP</a></li>
-                <li><a class="nav-link" href="jobs/create"><button class="btn btn-sm align-middle btn-info" type="button">POST A JOB</button></a></li>
+                <li><a class="nav-link" href="{{ url('jobs/create') }}"><button class="btn btn-sm align-middle btn-info" type="button">POST A JOB</button></a></li>
             @else
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

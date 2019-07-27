@@ -29,7 +29,7 @@
                 <div class="modal fade" id="uploadphoto{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
-                      <form action="/profile/uploadphoto" method="POST" enctype="multipart/form-data">
+                      <form action="{{ url('/profile/uploadphoto') }}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="modal-header">
                           <h5 class="modal-title text-info" id="exampleModalLabel">Upload Photo</h5>
@@ -156,7 +156,7 @@
 
                     <!-- Edit Skills Modal -->
                     <div class="modal fade" id="editskills{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                       <form action="/profile/skills/edit" method="post">
+                       <form action="{{ url('/profile/skills/edit') }}" method="post">
                         {{ csrf_field() }}
                           <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
@@ -185,7 +185,7 @@
 
                     <!-- Add Skills Modal -->
                     <div class="modal fade" id="addskills{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                       <form action="/profile/skills/store" method="post">
+                       <form action="{{ url('/profile/skills/store') }}" method="post">
                         {{ csrf_field() }}
                           <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
@@ -234,7 +234,7 @@
                     <div class="modal fade" id="addwork{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
-                                <form action="/profile/uploadresume" method="POST" enctype="multipart/form-data">
+                                <form action="{{ url('/profile/uploadresume') }}" method="POST" enctype="multipart/form-data">
                                   {{ csrf_field() }}
                               <div class="modal-header">
                                 <h5 class="modal-title text-info" id="exampleModalLabel">Upload Resume</h5>

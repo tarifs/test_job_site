@@ -13,7 +13,7 @@
 				</div>
 			@endif
         <div class="col-md-10 my-5" id="FillInformationContainer">           
-            	<form action="/fillinformation/store" method="post" id="work">
+            	<form action="{{ url('/fillinformation/store') }}" method="post" id="work">
             		{{ csrf_field() }}
             		<div class="row mb-3">
             		<h3>Personal Information</h3>

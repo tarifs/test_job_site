@@ -67,7 +67,7 @@ class ApplicantController extends Controller
         if($request->hasFile('profilepicture')) {
             $image        = $request->file('profilepicture');
             $filename     = time().'.'.$image->GetClientOriginalExtension();
-            $location     = 'profileImages/';
+            $location     = 'public/profileImages/';
             $url          = $location.$filename;
             $image->move($location,$filename);
             $profile->photo = $url;
@@ -88,7 +88,7 @@ class ApplicantController extends Controller
         if($request->hasFile('profilepicture')) {
             $image    = $request->file('profilepicture');
             $filename = time().'.'.$image->GetClientOriginalExtension();
-            $location = 'profileImages/';
+            $location = 'public/profileImages/';
             $url      = $location.$filename;
             $image->move($location,$filename);
             $profile->photo = $url;

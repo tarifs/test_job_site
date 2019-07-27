@@ -38,7 +38,7 @@
                                     	<i class="fas fa-envelope"></i> Received: {{$job->created_at->diffForHumans()}}
                                     </li>
                                     <li class="mb-2">
-                                        <a href="/applicant/profile/{{$applicant->user_id}}" class="btn btn-info w-100">View Profile</a>
+                                        <a href="{{ url('/applicant/profile') }}/{{$applicant->user_id}}" class="btn btn-info w-100">View Profile</a>
                                     </li>
                                      @if ($applicant->status == 'approved')
                                         <td class="text-center">
@@ -50,10 +50,10 @@
                                        </td>
                                      @else
                                         <li>
-                                        <a href="{{$applicant->id}}/approve" class="btn btn-success w-100 mb-2">APPROVED</a>
+                                        <a href="{{$applicant->id}}/{{ url('/approve') }}" class="btn btn-success w-100 mb-2">APPROVED</a>
                                         </li>
                                         <li>
-                                            <a href="{{$applicant->id}}/reject" class="btn btn-danger w-100">REJECT</a>
+                                            <a href="{{$applicant->id}}/{{ url('/reject') }}" class="btn btn-danger w-100">REJECT</a>
                                         </li>
                                       @endif   
                                   

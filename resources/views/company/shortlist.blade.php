@@ -77,7 +77,7 @@
                                         @else 
                                            <td class="text-center" ><i class="fas fa-user-circle fa-6x text-muted"></i></td>
                                         @endif 
-                                      <td class="text-nowrap"><h5 class="h5"> <a class="text-info" href="/proposal/{{$applicant->job_id}}/{{$applicant->id}}">{{ $applicant->name }}</a></h5>
+                                      <td class="text-nowrap"><h5 class="h5"> <a class="text-info" href="{{ url('/proposal') }}/{{$applicant->job_id}}/{{$applicant->id}}">{{ $applicant->name }}</a></h5>
                                         <p>{{ $applicant->job_title }}</p>
                                         <p class="small"> 
                                             <span class="mr-5">
@@ -97,12 +97,12 @@
                                        </td>
                                      @else
                                         <td>
-                                          <a href="/proposal/{{ $job->id }}/{{$applicant->id}}/approve" data-toggle="tooltip" data-placement="top" title="Approved">
+                                          <a href="{{ url('/proposal') }}/{{ $job->id }}/{{$applicant->id}}/approve" data-toggle="tooltip" data-placement="top" title="Approved">
                                              <i class="fas fa-thumbs-up fa-2x"></i>
                                           </a>
                                        </td>
                                       <td>
-                                         <a href="/proposal/{{ $job->id }}/{{$applicant->id}}/reject" data-toggle="tooltip" data-placement="top" title="Reject">
+                                         <a href="{{ url('/proposal') }}/{{ $job->id }}/{{$applicant->id}}/reject" data-toggle="tooltip" data-placement="top" title="Reject">
                                             <i class="far fa-thumbs-down fa-2x"></i>
                                          </a>
                                       </td>

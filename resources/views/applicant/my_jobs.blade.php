@@ -28,7 +28,7 @@
 	                   	@foreach($jobs as $job)
 	                   		<tr>
 						      <td>
-						      	<a href="/jobs/{{$job->job_id}}"><h4 class="h5 text-info">{{ $job->title }}</h4></a>
+						      	<a href="{{ url('/jobs') }}/{{$job->job_id}}"><h4 class="h5 text-info">{{ $job->title }}</h4></a>
 						      </td>
 						      <td>
 						      	@if ($job->status =='approved')

@@ -17,8 +17,8 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet"> 
+    <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/style.css') }}" rel="stylesheet"> 
 
     <!-- Hover CSS -->
     <link href="{{ asset('css/hover-min.css') }}" rel="stylesheet">
@@ -32,7 +32,7 @@
     <div id="app">
          <nav class="navbar navbar-expand-sm navbar-light navbar-laravel">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                   <img src="{{ asset('backend/Jobs.png') }}" id="mylogo">
+                   <img src="{{ asset('public/backend/Jobs.png') }}" id="mylogo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -56,8 +56,8 @@
         </main>
         @include('partials.footer')
     </div>   
-    <script src="{{asset('js/app.js')}}"></script>
-    <script src="{{asset('js/script.js')}}"></script>
+    <script src="{{asset('public/js/app.js')}}"></script>
+    <script src="{{asset('public/js/script.js')}}"></script>
 
     <!-- toastr JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>

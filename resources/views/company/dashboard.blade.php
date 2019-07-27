@@ -12,7 +12,7 @@
         <div class="col-md-10 my-5">            
             @include('partials.alert')
             <div class="card card-default">  
-                <div class="card-header"><h3 class="h3 d-inline-block text-info">Company Dashboard</h3><span class="float-right"><a href="/jobs/create"><button class="btn btn-info">Post a Job</button></a></span></div>
+                <div class="card-header"><h3 class="h3 d-inline-block text-info">Company Dashboard</h3><span class="float-right"><a href="{{ url('/jobs/create') }}"><button class="btn btn-info">Post a Job</button></a></span></div>
                 <div class="card-body pt-0 table-responsive">
                    @if(count($jobs) > 0)
                       <table class="table table-striped " id="jobTable">
@@ -28,7 +28,7 @@
                       <tbody>
                          @foreach ($jobs as $job)
                           <tr>
-                            <th scope="row"><h5 class="h5"><a href="jobs/{{$job->id}}" class="text-success">{{$job->title}}</a></h5 ></th>
+                            <th scope="row"><h5 class="h5"><a href="{{ url('/jobs') }}/{{$job->id}}" class="text-success">{{$job->title}}</a></h5 ></th>
                             <td><small>{{$job->created_at->diffForHumans()}}</small></td>
                             <td>{{$job->user->name}}</td>
                             <td>

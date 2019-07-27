@@ -15,7 +15,7 @@
 	                    @if(count($jobs) > 0)
 		                    @foreach ($jobs as $job)
 		                    <div class="card mb-3">
-		                        <h5 class="h5 card-header"><a href="jobs/{{$job->id}}" class="text-info">{{$job->title}}</a></h5>
+		                        <h5 class="h5 card-header"><a href="{{ url('/jobs') }}/{{$job->id}}" class="text-info">{{$job->title}}</a></h5>
 		                        <div class="card-block px-3">		                         
 			                        <p class="small">
 			                        	<span>Salary: &#36;{{$job->salary}}</span>

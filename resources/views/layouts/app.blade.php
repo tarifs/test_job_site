@@ -17,12 +17,12 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
     @yield('select2css')
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">  
+    <link href="{{ asset('public/css/style.css') }}" rel="stylesheet">  
 
     <!-- Hover CSS -->
-    <link href="{{ asset('css/hover-min.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/hover-min.css') }}" rel="stylesheet">
     <!-- Toastr CSS-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 

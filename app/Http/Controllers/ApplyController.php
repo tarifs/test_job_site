@@ -38,7 +38,7 @@ class ApplyController extends Controller
 
     	$applicant->jobs()->attach($id);
 
-    	return redirect("my-jobs")->with('success', "<i class='fas fa-check fa-fw'></i> Successfully Applied");;
+    	return redirect('my-jobs')->with('success', "<i class='fas fa-check fa-fw'></i> Successfully Applied");;
     }
 
     public function view($id)  

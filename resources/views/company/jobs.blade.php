@@ -23,7 +23,7 @@
                                     <tr>
                                       <td>
                                         <h5 class="h5">
-                                            <a href="/shortlist/{{$job->id}}" class="text-info">{{$job->title}}</a>
+                                            <a href="{{ url('/shortlist') }}/{{$job->id}}" class="text-info">{{$job->title}}</a>
                                         </h5>
                                         <p class="small">Posted: {{$job->created_at->diffForHumans()}}</p>
                                       </td>
