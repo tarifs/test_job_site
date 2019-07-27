@@ -31,7 +31,7 @@
 						      	<a href="/jobs/{{$job->job_id}}"><h4 class="h5 text-info">{{ $job->title }}</h4></a>
 						      </td>
 						      <td>
-						      	@if ($job->status =='hired')
+						      	@if ($job->status =='approved')
 						      		<h4><span class="badge badge-success w-100">{{ $job->status }}</span></h4>
 						      	@elseif($job->status =='rejected')
 						      		<h4><span class="badge badge-danger w-100">{{ $job->status }}</span></h4>
@@ -40,7 +40,7 @@
 						      	@endif
 						      </td>
 						      <td>
-						      	@if ($job->status !='hired')
+						      	@if ($job->status !='approved')
 						      	
 						      	@else	
 						      		<a href="#" data-toggle="tooltip" data-placement="top" title="Send Message">

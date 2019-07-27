@@ -220,141 +220,41 @@
                     <div class="card-header">
                         <a class="card-title">
                           <h5 class="d-inline-block h5 text-success font-weight-bold mb-0">Resume</h5>
+                          <button class="btn btn-default float-right py-0 px-1" data-toggle="modal" data-target="#editwork{{$user->id}}">
+                            <i class="far fa-edit text-success"></i> <span class="text-success h6">Edit</span>
+                        </button> 
                            <button class="btn btn-primary float-right  py-0 mr-1 px-1" data-toggle="modal" data-target="#addwork{{$user->id}}">
                                 <i class="far fa-edit text-white"></i> <span class="text-white h6">Add New</span>
                            </button>
                         </a>
                     </div>
-                    {{-- <div>
-                        <div class="card-body workBackgroundBody">
-                         @foreach($works as $work)
-                          <div>
-                            <p class="float-right text-danger targetWorkDiv">
-                              <i class="far fa-trash-alt" data-toggle="modal" data-target="#deleteWork{{$work->id}}"></i>
-                            </p>  
-                            <p class="float-right text-info mr-4">
-                                <i class="fas fa-pencil-alt" data-id="{{$work->id}}" data-toggle="modal" data-target="#editWork{{$work->id}}"></i>
-                            </p>
-                             <h5 class="h5 text-info">{{$work->position}}</h5>                            
-                             <h6 class="h6 text-black">{{$work->company}}</h6> 
-                             <small class="h6 mb-2 text-muted">{{ $work->year }}</small>
-                             <div class="mt-3 text-muted">{!! nl2br(e($work->description)) !!}</div>
-                             <hr>
-                           </div>
-
-                    <!-- Edit Work Background Modal -->
-                            <div class="modal fade" id="editWork{{$work->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h5 class="modal-title text-info" id="exampleModalLabel">Edit Work Background</h5>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
-                                    </div>
-                                    <div class="modal-body editworksbody">
-                                      <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text"><i class="fas fa-user"></i>&nbsp;Position</span>
-                                        </div>
-                                        <input type="text" id="editPosition" class="form-control" value="{{$work->position}}">
-                                      </div>
-                                      <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text"><i class="far fa-building"></i>&nbsp;Company</span>
-                                        </div>
-                                        <input type="text" id="editCompany" class="form-control" value="{{$work->company}}">
-                                      </div>
-                                      <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text"><i class="far fa-calendar"></i>&nbsp;Year</span>
-                                        </div>
-                                        <input type="text" id="editWorkYear" class="form-control" value="{{$work->year}}">
-                                      </div>
-                                      <div class="form-group">
-                                        <span class="input-group-text"><i class="fas fa-briefcase"></i>&nbsp;Description</span>
-                                        <textarea class="form-control" id="editWorkDescription" rows="3">{{$work->description}}</textarea>
-                                      </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                      <button type="submit" class="btn btn-primary editWorkBackground" data-dismiss="modal" data-id="{{$work->id}}">Save changes</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-
-                               <!-- Delete Work Modal -->
-                              <div class="modal fade" id="deleteWork{{$work->id}}">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                  
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                      <h4>REMOVE EMPLOYMENT</h4>
-                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    <div class="modal-body">
-                                      <h6 class="modal-title h6">Are you sure you want to delete <span class="text-info">"{{$work->company}}"</span> from your profile?</h6>
-                                    </div>
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-danger text-white px-5" data-dismiss="modal">No</button>
-                                      <button type="button" class="btn btn-primary deleteWork px-5" data-dismiss="modal" data-id="{{$work->id}}" >Yes</button>
-                                    </div>
-                                    
-                                  </div>
-                                </div>
-                              </div>
-           
-
-                        @endforeach
-                        </div>
-                    </div> --}}
                 </div>                
 
                     <!-- Add Resume Modal -->
-                    {{-- <div class="modal fade" id="addwork{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="addwork{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
+                                <form action="/profile/uploadresume" method="POST" enctype="multipart/form-data">
+                                  {{ csrf_field() }}
                               <div class="modal-header">
-                                <h5 class="modal-title text-info" id="exampleModalLabel">Add New Work</h5>
+                                <h5 class="modal-title text-info" id="exampleModalLabel">Upload Resume</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
                               <div class="modal-body editworksbody">
                                 <div class="input-group mb-3">
-                                  <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-user"></i>&nbsp;Position</span>
-                                  </div>
-                                  <input type="text" id="addPosition" class="form-control">
-                                </div>
-                                <div class="input-group mb-3">
-                                  <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="far fa-building"></i>&nbsp;Company</span>
-                                  </div>
-                                  <input type="text" id="addCompany" class="form-control">
-                                </div>  
-                                <div class="input-group mb-3">
-                                  <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="far fa-calendar"></i>&nbsp;Year</span>
-                                  </div>
-                                  <input type="text" id="addWorkYear" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                  <span class="input-group-text"><i class="fas fa-briefcase"></i>&nbsp;Description</span>
-                                  <textarea class="form-control" id="addWorkDescription" rows="3"></textarea>
+                                  <input type="file" id="addPosition" class="form-control">
                                 </div>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 <button type="submit" class="btn btn-primary addNewWorkButton" data-dismiss="modal">Save changes</button>
                               </div>
+                                </form>
                             </div>
                           </div>
-                    </div> --}}
+                    </div>
         </div>
     </div>
 </div>
