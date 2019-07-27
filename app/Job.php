@@ -10,7 +10,7 @@ class Job extends Model
     	return $this->belongsTo('App\User');
    }
 
-//    function applicants() {
-//     return $this->belongsToMany('App\Apply', 'apply_job', 'job_id', 'apply_user_id');
-// }
+   function applicants() {
+    return $this->belongsToMany('App\Apply', 'apply_job', 'job_id', 'apply_user_id');
+}
 }
